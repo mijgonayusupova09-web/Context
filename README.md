@@ -1,16 +1,83 @@
-# React + Vite
+# Context
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Context is a lightweight project designed to help developers manage and share application context in a clear, scalable way. This repository provides the core implementation, examples, and documentation to get started quickly.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Simple and intuitive API
+* Modular and extensible structure
+* Easy integration with existing projects
+* Well-documented examples
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+* Node.js (v16+ recommended)
+* npm or yarn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+```bash
+npm install context
+# or
+yarn add context
+```
+
+### Basic Usage
+
+```js
+import { createContext } from "context";
+
+const AppContext = createContext({
+  user: null,
+  theme: "light",
+});
+```
+
+## Project Structure
+
+```
+context/
+├─ src/
+│  ├─ index.js
+│  └─ context.js
+├─ examples/
+├─ tests/
+├─ README.md
+└─ package.json
+```
+
+## Configuration
+
+You can configure Context by passing options during initialization:
+
+```js
+createContext(initialState, options);
+```
+
+Available options:
+
+* `debug` – enable debug logging
+* `immutable` – prevent direct state mutation
+
+## Examples
+
+Check the `examples/` folder for real-world use cases and patterns.
+
+## Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a new branch (`feature/my-feature`)
+3. Commit your changes
+4. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+If you have questions or suggestions, feel free to open an issue or start a discussion.
